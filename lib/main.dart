@@ -37,6 +37,34 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
+      if (_counter >= 10) {
+        //--------------------------------------------
+        showAlertDialog(BuildContext context) {
+          // set up the button
+          Widget okButton = TextButton(
+            child: Text("OK"),
+            onPressed: () {},
+          );
+
+          // set up the AlertDialog
+          AlertDialog alert = AlertDialog(
+            title: Text("My title"),
+            content: Text("O numero de alunos excedeu 10."),
+            actions: [
+              okButton,
+            ],
+          );
+
+          // show the dialog
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return alert;
+            },
+          );
+        }
+        //--------------------------------------------
+      }
     });
   }
 
