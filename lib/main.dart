@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,31 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
       if (_counter >= 10) {
-        //--------------------------------------------
-        showAlertDialog(BuildContext context) {
-          // set up the button
-          Widget okButton = TextButton(
-            child: Text("OK"),
-            onPressed: () {},
-          );
-
-          // set up the AlertDialog
-          AlertDialog alert = AlertDialog(
-            title: Text("My title"),
-            content: Text("O numero de alunos excedeu 10."),
-            actions: [
-              okButton,
-            ],
-          );
-
-          // show the dialog
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return alert;
-            },
-          );
-        }
+        //----------------ALERTA---------------------------
+        // Fluttertoast.showToast(
+        //   msg: "O contador passou de 10!",
+        // toastLength: Toast.LENGTH_SHORT,
+        // gravity: ToastGravity.CENTER,
+        // );
         //--------------------------------------------
       }
     });
